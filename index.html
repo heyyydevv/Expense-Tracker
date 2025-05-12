@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Personal Expense Tracker</h1>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#transactions">Transactions</a></li>
+                    <li><a href="#budget">Budget</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="dashboard">
+                <h2>Dashboard</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Total Income</h3>
+                        <p>₹<span id="totalIncome">0.00</span></p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Total Expenses</h3>
+                        <p>₹<span id="totalExpenses">0.00</span></p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Balance</h3>
+                        <p>₹<span id="balance">0.00</span></p>
+                    </div>
+                </div>
+                <canvas id="expenseChart" height="200"></canvas>
+            </section>
+
+            <section id="transactions">
+                <h2>Transactions</h2>
+                <form id="transactionForm" class="transaction-form">
+                    <input type="text" id="description" placeholder="Description" required />
+                    <input type="number" id="amount" placeholder="Amount (₹)" step="0.01" required />
+                    <select id="category" required>
+                        <option value="" disabled selected>Category</option>
+                        <option value="food">Food</option>
+                        <option value="rent">Rent</option>
+                        <option value="travel">Travel</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select id="type" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <button type="submit" id="addTransaction">Add Transaction</button>
+                </form>
+                <div class="transaction-list">
+                    <table id="transactionsTable">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount (₹)</th>
+                                <th>Category</th>
+                                <th>Type</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="budget">
+                <h2>Budget</h2>
+                <form id="budgetForm" class="budget-form">
+                    <input type="number" id="budgetAmount" placeholder="Budget Amount (₹)" step="0.01" min="0" required />
+                    <select id="budgetCategory" required>
+                        <option value="" disabled selected>Category</option>
+                        <option value="food">Food</option>
+                        <option value="rent">Rent</option>
+                        <option value="travel">Travel</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button type="submit" id="setBudget">Set Budget</button>
+                </form>
+                <div class="budget-summary" id="budgetSummary"></div>
+            </section>
+
+            <section id="reports">
+                <h2>Reports</h2>
+                <canvas id="monthlyReportChart" height="250"></canvas>
+                <canvas id="yearlyReportChart" height="250" style="margin-top: 40px;"></canvas>
+            </section>
+
+            <section id="settings">
+                <h2>Settings</h2>
+                <div class="settings-form">
+                    <label>
+                        <input type="checkbox" id="autoSave" /> Auto Save Transactions
+                    </label>
+                    <label>
+                        <input type="checkbox" id="budgetAlerts" /> Enable Budget Alerts
+                    </label>
+                    <button id="saveSettings">Save Settings</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

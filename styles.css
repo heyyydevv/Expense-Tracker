@@ -1,0 +1,255 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: #2980b9;
+    outline: none;
+}
+
+/* Main Sections */
+main > section {
+    margin-bottom: 40px;
+}
+
+/* Section Headings */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+
+/* Summary Grid */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.summary-item {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(52, 73, 94, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.summary-item:hover {
+    box-shadow: 0 6px 15px rgba(52, 73, 94, 0.15);
+}
+
+.summary-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.summary-item p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+/* Forms */
+.transaction-form,
+.budget-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.transaction-form input[type="text"],
+.transaction-form input[type="number"],
+.transaction-form select,
+.budget-form input[type="number"],
+.budget-form select {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.transaction-form input[type="text"]:focus,
+.transaction-form input[type="number"]:focus,
+.transaction-form select:focus,
+.budget-form input[type="number"]:focus,
+.budget-form select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+}
+
+.transaction-form button,
+.budget-form button,
+.settings-form button {
+    padding: 12px 0;
+    background-color: #3498db;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transaction-form button:hover,
+.budget-form button:hover,
+.settings-form button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 10px rgba(41, 128, 185, 0.6);
+}
+
+/* Transaction List */
+.transaction-list {
+    overflow-x: auto;
+}
+
+#transactionsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#transactionsTable th,
+#transactionsTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#transactionsTable th {
+    background-color: #3498db;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#transactionsTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#transactionsTable tbody tr:hover {
+    background-color: #d6eaf8;
+}
+
+#transactionsTable td button {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#transactionsTable td button:hover {
+    background-color: #c0392b;
+}
+
+/* Budget Summary */
+.budget-summary {
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: inset 0 0 15px rgba(52, 73, 94, 0.1);
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+/* Reports */
+#monthlyReportChart,
+#yearlyReportChart,
+#expenseChart {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 40px auto;
+}
+
+/* Settings Form */
+.settings-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.settings-form label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.settings-form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .transaction-form,
+    .budget-form {
+        grid-template-columns: 1fr;
+    }
+}
+
